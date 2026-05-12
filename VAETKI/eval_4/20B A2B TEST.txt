@@ -1,0 +1,170 @@
+20B A2B TEST
+
+동일한 평가 코드와 시드를 사용했음에도 A100과 V100 환경에서 성공률 차이가 발생하였다. 
+이는 모델 파라미터가 달라진 것이 아니라, sampling 기반 생성의 비결정성, reasoning runaway 및 반복 루프 발생 여부, timeout 처리, 
+그리고 vLLM/PyTorch/CUDA/chat template 등 서버 추론 환경 차이가 멀티턴 history에 누적되었기 때문으로 해석된다. 
+특히 실패 latency 중앙값이 두 환경 모두 약 530초 수준으로 유지된 점은 실패 사례가 GPU 연산 속도보다 timeout/repetition loop에 의해 지배되고 있음을 보여준다. 
+따라서 성능 비교보다는 안정성 비교로 해석해야 하며, 후속 실험에서는 temperature=0, seed 고정, max_tokens 축소, timeout 축소, summary memory 기반 history 관리가 필요하다.
+
+a100
+속도: 
+
+4개 -> 15:36 ~ 17:53 // 2시간 17분
+10개 -> 15:36 ~ 20:46 // 5시간 10분
+20개 -> 대량 10시간 20분
+1. 첫 번째 시도 (26.05.11, 15:36 시작)
+1) max_token = 4096
+2) timeout = 600
+
+4축 평가 결과
+<전체 요약>
+1. 세션 수: 20
+2. 총 turn: 123 (성공 turn: 49, 39.8%)
+3. 성공 latency 중앙값: 62.2s
+4. 실패 latency 중앙값: 528.6s
+
+<트랙별 성공률>
+1. persona: 16/31 성공, 성공률 51.6%
+2. multiturn: 13/30 성공, 성공률 43.3%
+3. foreigner_lang: 15/27 성공, 성공률 55.6%
+4. recommendation: 5/35 성공, 성공률 14.3%
+
+-------
+-------
+
+v100
+속도: 
+4개 3시간
+
+1. 첫 번째 시도 (26.05.08, 15시간)
+- 전체 성공률 28.5%
+- 실패 85건 중 empt 74건, repetition_loop 11건
+- 실패 latency 중앙값 535.6s 모델이 “틀린 답”을 내는 것보다 생성 runaway → timeout/빈 응답으로 무너지는 패턴
+1) max_token = 4096
+2) timeout = 600
+
+4축 평가 결과
+<전체 요약>
+1. 세션 수: 20
+2. 총 turn: 123 (성공 turn: 35, 28.5%)
+3. 성공 latency 중앙값: 71.3s
+4. 실패 latency 중앙값: 535.6s
+
+<트랙별 성공률>
+1. persona: 11/31 성공, 성공률 35.5%
+2. multiturn: 16/30 성공, 성공률 53.3%
+3. foreigner_lang: 4/27 성공, 성공률 14.8%
+4. recommendation: 4/35 성공, 성공률 11.4%
+
+---
+
+2. 두 번째 시도 (26.05.11 14:30 시작 ~ 17:22 끝 // 2시간 52분 걸림)
+따라서, 
+1) max_token=4096 -> 768 수정
+2) call_model()에 stop token 추가
+	resp 내부의 stop=["<|END|>"] 추가
+3) timeout 600 -> 180 수정
+
+4축 평가 결과
+<전체 요약>
+1. 세션 수: 20
+2. 총 turn: 123 (성공 turn: 47, 38.2%)
+3. 성공 latency 중앙값: 74.3s
+4. 실패 latency 중앙값: 99.0s
+
+<트랙별 성공률>
+1. persona: 13/31 성공, 성공률 41.9%
+2. multiturn: 12/30 성공, 성공률 40.0%
+3. foreigner_lang: 10/27 성공, 성공률 37.0%
+4. recommendation: 12/35 성공, 성공률 34.3%
+-------
+
+3. 세 번째 시도 (26.05.11 17:55 시작 ~ 20:08  끝 // 2시간 13분 걸림)
+1) max_token=4096 -> 768
+2) call_model()에 stop token 추가
+	resp 내부의 stop=["<|END|>"] 추가
+3) timeout 600 -> 180 수정
+4) + history 누적 방식을 전체 누적 -> summary memory + 최근 2턴으로 변경 [2번째와 다름]
+
+4축 평가 결과
+<전체 요약>
+1. 세션 수: 20
+2. 총 turn: 123 (성공 turn: 66, 53.7%)
+3. 성공 latency 중앙값: 43.1s
+4. 실패 latency 중앙값: 95.2s
+
+<트랙별 성공률>
+1. persona: 20/31 성공, 성공률 64.5%
+2. multiturn: 18/30 성공, 성공률 60.0%
+3. foreigner_lang: 12/27 성공, 성공률 44.4%
+4. recommendation: 16/35 성공, 성공률 45.7%
+------
+
+4. 네 번째 시도 (26.05.11 20:24 시작 ~ 모름 끝)
+1) max_token=4096 -> 512 [3번째와 다름]
+2) call_model()에 stop token 추가
+	resp 내부의 stop=["<|END|>"] 추가
+3) timeout 600 -> 180 수정
+4) history 누적 방식을 전체 누적 -> summary memory + 최근 2턴으로 변경
+
+4축 평가 결과
+<전체 요약>
+1. 세션 수: 20
+2. 총 turn: 123 (성공 turn: 55, 44.7%)
+3. 성공 latency 중앙값: 41.3s
+4. 실패 latency 중앙값: 64.2s
+
+<트랙별 성공률>
+1. persona: 16/31 성공, 성공률 51.6%
+2. multiturn: 16/30 성공, 성공률 53.3%
+3. foreigner_lang: 9/27 성공, 성공률 33.3%
+4. recommendation: 14/35 성공, 성공률 40.0%
+
+------
+
+5. 다섯 번째 시도 (26.05.12 08:14 시작 ~ 10:50 // 2시간 36분 )
+1) max_token=4096 -> 768
+2) call_model()에 stop token 제거
+	resp 내부의 stop=["<|END|>"] 제거 [3번째와 다름]
+3) timeout 600 -> 180 수정
+4) + history 누적 방식을 전체 누적 -> summary memory + 최근 2턴으로 변경
+
+4축 평가 결과
+<전체 요약>
+1. 세션 수: 20
+2. 총 turn: 123 (성공 turn: 55, 43.9%)
+3. 성공 latency 중앙값: 39.7s
+4. 실패 latency 중앙값: 99.2s
+
+<트랙별 성공률>
+1. persona: 14/31 성공, 성공률 45.2%
+2. multiturn: 21/30 성공, 성공률 70.0%
+3. foreigner_lang: 5/27 성공, 성공률 18.5%
+4. recommendation: 14/35 성공, 성공률 40.0%
+
+--------------
+
+6. 여섯 번째 시도 (26.05.13 예정)
+1) max_token=4096 -> 768
+2) call_model()에 stop token 제거
+	resp 내부의 stop=["<|END|>"] 제거
+3) timeout 600 -> 300수정 [5 번째와 다름]
+4) + history 누적 방식을 전체 누적 -> summary memory + 최근 2턴으로 변경
+
+----------------
+
+6. 일곱 번째 시도 (26.05.13 예정)
+1) max_token=4096 -> 768
+2) call_model()에 stop token 제거
+	resp 내부의 stop=["<|END|>"] 제거
+3) timeout 600 [여섯 번째와 다름]
+4) + history 누적 방식을 전체 누적 -> summary memory + 최근 2턴으로 변경
+
+----------------
+
+5. 다섯 번째 시도 (26.05.12 예정)
+1) max_token = 256
+2) call_model()에 stop token 추가
+	resp 내부의 stop=["<|END|>"] 추가
+3) timeout 100 수정
+4) history 누적 방식을 전체 누적 -> summary memory + 최근 3턴으로 변경

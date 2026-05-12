@@ -1,0 +1,30 @@
+3번째 코드 run_multi~ 실행 란
+
+python -u run_multiturn_generative_summary_memory.py --input evaluation_4axis_seed.csv --output multiturn_4axis_20b_results_summary.csv --base-url-a http://172.20.93.80:8001/v1 --model-a vaetki20b --only-a --temperature 0.2 --top-p 0.85 --max-tokens 768 --timeout 180 2>&1 | tee multiturn_4axis_20b_run_summary.log
+
+
+기존 run 코드
+python -u run_multiturn_generative.py --input evaluation_4axis_seed.csv --output multiturn_4axis_20b_results.csv --base-url-a http://[VLLM_HOST]/v1 --model-a vaetki20b --only-a --temperature 0.2 --top-p 0.9 --max-tokens 4096 --timeout 600 2>&1 | tee multiturn_4axis_20b_run.log
+
+
+차이
+1. 실행.py
+2. 저장.csv
+3. token, top-p, timeout
+4. log
+
+
+----
+
+3번째 결과 코드 실행 변경
+analyze_4axis.py 확인 후 하기 실행코드 진행
+python analyze_4axis_summary_memory.py --input multiturn_4axis_20b_results_summary.csv --mode think --output multiturn_4axis_20b_report.md
+
+결과 기존 코드
+python analyze_4axis.py --input multiturn_4axis_20b_results.csv --mode think --output multiturn_4axis_20b_report.md
+
+
+python analyze_4axis.py \
+  --input multiturn_4axis_20b_results.csv \
+  --mode think \
+  --output multiturn_4axis_20b_report.md

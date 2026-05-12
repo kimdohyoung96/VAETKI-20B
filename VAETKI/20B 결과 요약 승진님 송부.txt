@@ -1,0 +1,29 @@
+안녕하세요 승진님!
+
+VAETKI 20B 평가 결과입니다.
+
+# 실험 결과 요약
+
+1. timeout (120/500/2000)
+	- 답변에 큰 영향 X
+	- 높힌다고 해서 멀티턴이 지속되지 않음
+
+2. stop token (stop=["</think>"]) 추가
+	- think 중단 가능, reasoning은 출력 (think 중단시 답변 X)
+
+3. (stop=["</think>"]) 코드 제거시 답변 출력
+	-> response, answer가 코드 추가 보다 덜 잘리는 경향이 있음
+	-> 멀티턴 대화를 1-2턴 지속하는 경향을 보임
+
+4. max_tokens (256/512/1024)
+	- 답변에 큰 영향 X
+	- 높힌다고 해서 멀티턴이 지속되지 않음
+
+5. temperature (반복 루프 확인)
+	- 답변에 큰 영향 X
+
+6. VAETKI-20B, no-think 설정 적용
+	- 응답에서 reasoning 구간, </think> 종료 태그가 출력.
+	- 클라이언트(프롬프트, chat_template_kwargs) 설정으로는 think 출력 비활성화 불가.
+ 
+추가로 금일 VAETKI 4축 평가 진행할 예정입니다.

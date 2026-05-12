@@ -1,0 +1,7 @@
+analyze_4axis.py 결과파일
+
+PYTHONIOENCODING=utf-8 python analyze_4axis.py --input multiturn_4axis_20b_results.csv --mode think --output multiturn_4axis_20b_report.md
+
+결과
+
+wrote multiturn_4axis_20b_report.md: 20 sessions

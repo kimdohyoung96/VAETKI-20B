@@ -6,10 +6,11 @@ from typing import Any
 import torch
 from torch import nn
 
-from datasets import load_dataset
-
-# Login using e.g. `huggingface-cli login` to access this dataset
-ds = load_dataset("nvidia/OpenScience", "OS-Q2.5-32B-10")
+## from huggingface_hub import datasets
+## import huggingface_hub
+## from datasets import load_dataset
+### Login using e.g. `huggingface-cli login` to access this dataset
+##ds = load_dataset("nvidia/OpenScience", "OS-Q2.5-32B-10")
 
 from vllm.attention.layer import Attention
 from vllm.compilation.decorators import support_torch_compile

@@ -1,0 +1,224 @@
+run_multiturn_generative.py 실행 결과 파일
+
+PS C:\Users\kdhms\Desktop\VAETKI\eval_4> python -u run_multiturn_generative.py --input evaluation_4axis_seed.csv --output multiturn_4axis_20b_results.csv --base-url-a http://172.20.93.80:8001/v1 --model-a vaetki20b --only-a --temperature 0.2 --top-p 0.9 --max-tokens 4096 --timeout 600 2>&1 | tee multiturn_4axis_20b_run.log
+[1/20] PER-MT-101 turn1/7 ok (164035ms, raw 2164 chars / clean 950 chars)
+[1/20] PER-MT-101 turn2/7 ok (582363ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn3/7 ok (532297ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn4/7 ok (533149ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn5/7 ok (531572ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn6/7 ok (528409ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn7/7 ok (536210ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[2/20] PER-MT-102 turn1/5 ok (38684ms, raw 593 chars / clean 112 chars)
+[2/20] PER-MT-102 turn2/5 ok (54912ms, raw 807 chars / clean 242 chars)
+[2/20] PER-MT-102 turn3/5 ok (59147ms, raw 882 chars / clean 259 chars)
+[2/20] PER-MT-102 turn4/5 ok (72162ms, raw 1102 chars / clean 618 chars)
+[2/20] PER-MT-102 turn5/5 ok (527460ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[3/20] PER-MT-103 turn1/6 ok (104188ms, raw 1553 chars / clean 802 chars)
+[3/20] PER-MT-103 turn2/6 ok (86847ms, raw 1280 chars / clean 872 chars)
+[3/20] PER-MT-103 turn3/6 ok (532649ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[3/20] PER-MT-103 turn4/6 ok (526392ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[3/20] PER-MT-103 turn5/6 ok (526369ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[3/20] PER-MT-103 turn6/6 ok (526516ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn5/7 ok (531572ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn6/7 ok (528409ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn7/7 ok (536210ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[2/20] PER-MT-102 turn1/5 ok (38684ms, raw 593 chars / clean 112 chars)
+[2/20] PER-MT-102 turn2/5 ok (54912ms, raw 807 chars / clean 242 chars)
+[2/20] PER-MT-102 turn3/5 ok (59147ms, raw 882 chars / clean 259 chars)
+[2/20] PER-MT-102 turn4/5 ok (72162ms, raw 1102 chars / clean 618 chars)
+[2/20] PER-MT-102 turn5/5 ok (527460ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[3/20] PER-MT-103 turn1/6 ok (104188ms, raw 1553 chars / clean 802 chars)
+[3/20] PER-MT-103 turn2/6 ok (86847ms, raw 1280 chars / clean 872 chars)
+[3/20] PER-MT-103 turn3/6 ok (532649ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[3/20] PER-MT-103 turn4/6 ok (526392ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn5/7 ok (531572ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn6/7 ok (528409ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn7/7 ok (536210ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[2/20] PER-MT-102 turn1/5 ok (38684ms, raw 593 chars / clean 112 chars)
+[2/20] PER-MT-102 turn2/5 ok (54912ms, raw 807 chars / clean 242 chars)
+[2/20] PER-MT-102 turn3/5 ok (59147ms, raw 882 chars / clean 259 chars)
+[2/20] PER-MT-102 turn4/5 ok (72162ms, raw 1102 chars / clean 618 chars)
+[2/20] PER-MT-102 turn5/5 ok (527460ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[3/20] PER-MT-103 turn1/6 ok (104188ms, raw 1553 chars / clean 802 chars)
+[1/20] PER-MT-101 turn5/7 ok (531572ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn6/7 ok (528409ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn7/7 ok (536210ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[2/20] PER-MT-102 turn1/5 ok (38684ms, raw 593 chars / clean 112 chars)
+[2/20] PER-MT-102 turn2/5 ok (54912ms, raw 807 chars / clean 242 chars)
+[2/20] PER-MT-102 turn3/5 ok (59147ms, raw 882 chars / clean 259 chars)
+[2/20] PER-MT-102 turn4/5 ok (72162ms, raw 1102 chars / clean 618 chars)
+[2/20] PER-MT-102 turn5/5 ok (527460ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn5/7 ok (531572ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn6/7 ok (528409ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn7/7 ok (536210ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[2/20] PER-MT-102 turn1/5 ok (38684ms, raw 593 chars / clean 112 chars)
+[2/20] PER-MT-102 turn2/5 ok (54912ms, raw 807 chars / clean 242 chars)
+[2/20] PER-MT-102 turn3/5 ok (59147ms, raw 882 chars / clean 259 chars)
+[1/20] PER-MT-101 turn5/7 ok (531572ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn6/7 ok (528409ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn7/7 ok (536210ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[2/20] PER-MT-102 turn1/5 ok (38684ms, raw 593 chars / clean 112 chars)
+[1/20] PER-MT-101 turn5/7 ok (531572ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn5/7 ok (531572ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn6/7 ok (528409ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn5/7 ok (531572ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn5/7 ok (531572ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn6/7 ok (528409ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[1/20] PER-MT-101 turn7/7 ok (536210ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[2/20] PER-MT-102 turn1/5 ok (38684ms, raw 593 chars / clean 112 chars)
+[2/20] PER-MT-102 turn2/5 ok (54912ms, raw 807 chars / clean 242 chars)
+[2/20] PER-MT-102 turn3/5 ok (59147ms, raw 882 chars / clean 259 chars)
+[2/20] PER-MT-102 turn4/5 ok (72162ms, raw 1102 chars / clean 618 chars)
+[2/20] PER-MT-102 turn5/5 ok (527460ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[3/20] PER-MT-103 turn1/6 ok (104188ms, raw 1553 chars / clean 802 chars)
+[3/20] PER-MT-103 turn2/6 ok (86847ms, raw 1280 chars / clean 872 chars)
+[3/20] PER-MT-103 turn3/6 ok (532649ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[3/20] PER-MT-103 turn4/6 ok (526392ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[3/20] PER-MT-103 turn5/6 ok (526369ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[3/20] PER-MT-103 turn6/6 ok (526516ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[4/20] PER-MT-104 turn1/8 ok (91441ms, raw 1376 chars / clean 806 chars)
+[4/20] PER-MT-104 turn2/8 ok (115045ms, raw 1647 chars / clean 1102 chars)
+[4/20] PER-MT-104 turn3/8 ok (536803ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[4/20] PER-MT-104 turn4/8 ok (530388ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[4/20] PER-MT-104 turn5/8 ok (531744ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[4/20] PER-MT-104 turn6/8 ok (527049ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[4/20] PER-MT-104 turn7/8 ok (527400ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[4/20] PER-MT-104 turn8/8 ok (527689ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[5/20] PER-MT-105 turn1/5 ok (72279ms, raw 1046 chars / clean 513 chars)
+[5/20] PER-MT-105 turn2/5 ok (94905ms, raw 1360 chars / clean 892 chars)
+[5/20] PER-MT-105 turn3/5 ok (529000ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[5/20] PER-MT-105 turn4/5 ok (529173ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[5/20] PER-MT-105 turn5/5 ok (527184ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[6/20] MTN-MT-101 turn1/4 ok (78153ms, raw 1172 chars / clean 764 chars)
+[6/20] MTN-MT-101 turn2/4 ok (79928ms, raw 1189 chars / clean 583 chars)
+[6/20] MTN-MT-101 turn3/4 ok (526891ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[6/20] MTN-MT-101 turn4/4 ok (527302ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[7/20] MTN-MT-102 turn1/7 ok (55204ms, raw 845 chars / clean 328 chars)
+[7/20] MTN-MT-102 turn2/7 ok (46276ms, raw 700 chars / clean 328 chars)
+[7/20] MTN-MT-102 turn3/7 ok (64865ms, raw 982 chars / clean 558 chars)
+[7/20] MTN-MT-102 turn4/7 ok (527944ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[7/20] MTN-MT-102 turn5/7 ok (531223ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[7/20] MTN-MT-102 turn6/7 ok (527141ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[7/20] MTN-MT-102 turn7/7 ok (527533ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[8/20] MTN-MT-103 turn1/5 ok (71314ms, raw 999 chars / clean 182 chars)
+[8/20] MTN-MT-103 turn2/5 ok (534750ms, raw 7052 chars / clean 0 chars) [EMPTY-skipped from history]
+[8/20] MTN-MT-103 turn3/5 ok (54526ms, raw 778 chars / clean 236 chars)
+[8/20] MTN-MT-103 turn4/5 ok (31039ms, raw 462 chars / clean 140 chars)
+[8/20] MTN-MT-103 turn5/5 ok (38442ms, raw 550 chars / clean 40 chars)
+[9/20] MTN-MT-104 turn1/8 ok (100905ms, raw 1610 chars / clean 1003 chars)
+[9/20] MTN-MT-104 turn2/8 ok (100825ms, raw 1564 chars / clean 684 chars)
+[9/20] MTN-MT-104 turn3/8 ok (534392ms, raw 8109 chars / clean 7674 chars)
+[9/20] MTN-MT-104 turn4/8 ok (537300ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[9/20] MTN-MT-104 turn5/8 ok (528350ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[9/20] MTN-MT-104 turn6/8 ok (528210ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[9/20] MTN-MT-104 turn7/8 ok (539331ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[9/20] MTN-MT-104 turn8/8 ok (528159ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[10/20] MTN-MT-105 turn1/6 ok (93473ms, raw 1479 chars / clean 804 chars)
+[10/20] MTN-MT-105 turn2/6 ok (46227ms, raw 703 chars / clean 142 chars)
+[10/20] MTN-MT-105 turn3/6 ok (75004ms, raw 1123 chars / clean 298 chars)
+[10/20] MTN-MT-105 turn4/6 ok (21859ms, raw 343 chars / clean 113 chars)
+[10/20] MTN-MT-105 turn5/6 ok (31157ms, raw 500 chars / clean 150 chars)
+[10/20] MTN-MT-105 turn6/6 ok (527418ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[11/20] FRN-MT-101 turn1/5 ok (528512ms, raw 7301 chars / clean 0 chars) [EMPTY-skipped from history]
+[11/20] FRN-MT-101 turn2/5 ok (54038ms, raw 772 chars / clean 373 chars)
+[11/20] FRN-MT-101 turn3/5 ok (531995ms, raw 7130 chars / clean 6375 chars)
+[11/20] FRN-MT-101 turn4/5 ok (534175ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[11/20] FRN-MT-101 turn5/5 ok (542741ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn1/6 ok (527542ms, raw 6851 chars / clean 6371 chars)
+[12/20] FRN-MT-102 turn2/6 ok (529216ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn3/6 ok (528734ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn4/6 ok (528251ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn5/6 ok (533730ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn6/6 ok (527809ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[13/20] FRN-MT-103 turn1/7 ok (63934ms, raw 917 chars / clean 344 chars)
+[13/20] FRN-MT-103 turn2/7 ok (55686ms, raw 736 chars / clean 426 chars)
+[12/20] FRN-MT-102 turn2/6 ok (529216ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn3/6 ok (528734ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn4/6 ok (528251ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn5/6 ok (533730ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn6/6 ok (527809ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[13/20] FRN-MT-103 turn1/7 ok (63934ms, raw 917 chars / clean 344 chars)
+[13/20] FRN-MT-103 turn2/7 ok (55686ms, raw 736 chars / clean 426 chars)
+[12/20] FRN-MT-102 turn3/6 ok (528734ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn4/6 ok (528251ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn5/6 ok (533730ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn6/6 ok (527809ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[13/20] FRN-MT-103 turn1/7 ok (63934ms, raw 917 chars / clean 344 chars)
+[13/20] FRN-MT-103 turn2/7 ok (55686ms, raw 736 chars / clean 426 chars)
+[12/20] FRN-MT-102 turn4/6 ok (528251ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn5/6 ok (533730ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn6/6 ok (527809ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[13/20] FRN-MT-103 turn1/7 ok (63934ms, raw 917 chars / clean 344 chars)
+[13/20] FRN-MT-103 turn2/7 ok (55686ms, raw 736 chars / clean 426 chars)
+[13/20] FRN-MT-103 turn3/7 ok (129480ms, raw 3285 chars / clean 82 chars)
+[13/20] FRN-MT-103 turn4/7 ok (540455ms, raw 8676 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn5/6 ok (533730ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[12/20] FRN-MT-102 turn6/6 ok (527809ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[13/20] FRN-MT-103 turn1/7 ok (63934ms, raw 917 chars / clean 344 chars)
+[13/20] FRN-MT-103 turn2/7 ok (55686ms, raw 736 chars / clean 426 chars)
+[13/20] FRN-MT-103 turn3/7 ok (129480ms, raw 3285 chars / clean 82 chars)
+[13/20] FRN-MT-103 turn4/7 ok (540455ms, raw 8676 chars / clean 0 chars) [EMPTY-skipped from history]
+[13/20] FRN-MT-103 turn1/7 ok (63934ms, raw 917 chars / clean 344 chars)
+[13/20] FRN-MT-103 turn2/7 ok (55686ms, raw 736 chars / clean 426 chars)
+[13/20] FRN-MT-103 turn3/7 ok (129480ms, raw 3285 chars / clean 82 chars)
+[13/20] FRN-MT-103 turn4/7 ok (540455ms, raw 8676 chars / clean 0 chars) [EMPTY-skipped from history]
+[13/20] FRN-MT-103 turn2/7 ok (55686ms, raw 736 chars / clean 426 chars)
+[13/20] FRN-MT-103 turn3/7 ok (129480ms, raw 3285 chars / clean 82 chars)
+[13/20] FRN-MT-103 turn4/7 ok (540455ms, raw 8676 chars / clean 0 chars) [EMPTY-skipped from history]
+[13/20] FRN-MT-103 turn3/7 ok (129480ms, raw 3285 chars / clean 82 chars)
+[13/20] FRN-MT-103 turn4/7 ok (540455ms, raw 8676 chars / clean 0 chars) [EMPTY-skipped from history]
+[13/20] FRN-MT-103 turn4/7 ok (540455ms, raw 8676 chars / clean 0 chars) [EMPTY-skipped from history]
+[13/20] FRN-MT-103 turn5/7 ok (583709ms, raw 6876 chars / clean 0 chars) [EMPTY-skipped from history]
+[13/20] FRN-MT-103 turn6/7 ok (585468ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[13/20] FRN-MT-103 turn7/7 ok (585200ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[14/20] FRN-MT-104 turn1/4 ok (67888ms, raw 858 chars / clean 299 chars)
+[14/20] FRN-MT-104 turn2/4 ok (569909ms, raw 6883 chars / clean 0 chars) [EMPTY-skipped from history]
+[14/20] FRN-MT-104 turn3/4 ok (51570ms, raw 791 chars / clean 365 chars)
+[14/20] FRN-MT-104 turn4/4 ok (48259ms, raw 736 chars / clean 365 chars)
+[15/20] FRN-MT-105 turn1/5 ok (527534ms, raw 8605 chars / clean 8011 chars)
+[15/20] FRN-MT-105 turn2/5 ok (536038ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[15/20] FRN-MT-105 turn3/5 ok (544058ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[15/20] FRN-MT-105 turn4/5 ok (538233ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[15/20] FRN-MT-105 turn1/5 ok (527534ms, raw 8605 chars / clean 8011 chars)
+[15/20] FRN-MT-105 turn2/5 ok (536038ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[15/20] FRN-MT-105 turn3/5 ok (544058ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[15/20] FRN-MT-105 turn4/5 ok (538233ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[15/20] FRN-MT-105 turn5/5 ok (536475ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[16/20] REC-MT-101 turn1/8 ok (550457ms, raw 8001 chars / clean 7472 chars)
+[16/20] REC-MT-101 turn2/8 ok (535095ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[16/20] REC-MT-101 turn3/8 ok (552034ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[16/20] REC-MT-101 turn4/8 ok (573102ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[16/20] REC-MT-101 turn5/8 ok (586164ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[16/20] REC-MT-101 turn6/8 ok (585568ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[16/20] REC-MT-101 turn7/8 ok (587161ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[16/20] REC-MT-101 turn8/8 ok (561262ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[17/20] REC-MT-102 turn1/7 ok (129509ms, raw 1893 chars / clean 1012 chars)
+[17/20] REC-MT-102 turn2/7 ok (69995ms, raw 941 chars / clean 293 chars)
+[17/20] REC-MT-102 turn3/7 ok (585097ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[17/20] REC-MT-102 turn4/7 ok (585523ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[17/20] REC-MT-102 turn5/7 ok (586757ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[17/20] REC-MT-102 turn6/7 ok (584003ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[17/20] REC-MT-102 turn7/7 ok (565893ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[18/20] REC-MT-103 turn1/6 ok (109680ms, raw 1467 chars / clean 1051 chars)
+[18/20] REC-MT-103 turn2/6 ok (586501ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[18/20] REC-MT-103 turn3/6 ok (554017ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[18/20] REC-MT-103 turn4/6 ok (585276ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[18/20] REC-MT-103 turn5/6 ok (578823ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+ from history]
+[18/20] REC-MT-103 turn6/6 ok (585273ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[19/20] REC-MT-104 turn1/6 ok (316668ms, raw 3680 chars / clean 2990 chars)
+[19/20] REC-MT-104 turn2/6 ok (585986ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[19/20] REC-MT-104 turn3/6 ok (586788ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[19/20] REC-MT-104 turn4/6 ok (585417ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[19/20] REC-MT-104 turn5/6 ok (585437ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[19/20] REC-MT-104 turn6/6 ok (585892ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[20/20] REC-MT-105 turn1/8 ok (131575ms, raw 1935 chars / clean 1471 chars)
+[20/20] REC-MT-105 turn2/8 ok (583204ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[20/20] REC-MT-105 turn3/8 ok (564631ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[20/20] REC-MT-105 turn4/8 ok (575089ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[20/20] REC-MT-105 turn5/8 ok (582697ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[20/20] REC-MT-105 turn6/8 ok (585574ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[20/20] REC-MT-105 turn7/8 ok (577379ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+[20/20] REC-MT-105 turn8/8 ok (584590ms, raw 0 chars / clean 0 chars) [EMPTY-skipped from history]
+Saved: multiturn_4axis_20b_results.csv
+

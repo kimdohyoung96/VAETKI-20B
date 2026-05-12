@@ -1,0 +1,14 @@
+[v100]
+
+1번째 시도:
+- 기존 max-tokens 4096 (반복 루프가 8천자까지 가면서 실패)
+- timeout 600
+- 20 turn 15시간 
+
+2번째 시도: 
+- max-tokens 768 
+- timeout 180
+- stop=["<|END|>"]
+- 20 turn 2시간 52분
+
+python analyze_4axis.py --input multiturn_4axis_20b_results.csv --mode think --output multiturn_4axis_20b_report.md

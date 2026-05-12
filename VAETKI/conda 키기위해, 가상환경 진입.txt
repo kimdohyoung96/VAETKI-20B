@@ -1,0 +1,28 @@
+conda 키기위해, 가상환경 진입
+
+source /kdhms/miniconda3/etc/profile.d/conda.sh
+
+conda activate gemma4
+
+pkill -9 -f vllm
+pkill -9 -f VLLM
+pkill -9 -f "vllm.entrypoints"
+pkill -9 -f "VLLM::Worker"
+
+nvidia-smi
+
+rm -f ~/vllm_server.log
+
+CUDA_VISIBLE_DEVICES=0,1 nohup python -m vllm.entrypoints.openai.api_server \
+  --model google/gemma-4-31B-it \
+  --host 0.0.0.0 \
+  --port 8888 \
+  --tensor-parallel-size 2 \
+  --gpu-memory-utilization 0.92 \
+  --max-model-len 4096 \
+  --max-num-seqs 1 \
+  --max-num-batched-tokens 1024 \
+  --enforce-eager \
+  > ~/vllm_server.log 2>&1 & disown
+
+tail -f ~/vllm_server.log

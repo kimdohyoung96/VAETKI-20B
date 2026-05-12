@@ -1,10 +1,5 @@
 if __name__ == "__main__":
 
-    from datasets import load_dataset
-
-# Login using e.g. `huggingface-cli login` to access this dataset
-ds = load_dataset("nvidia/OpenScience", "OS-Q2.5-32B-10")
-
     from vllm import LLM, SamplingParams
 
     model_name = "NC-AI-consortium-VAETKI/VAETKI"
