@@ -1,0 +1,41 @@
+첨부 4개 파일은 VAETKI 4축 평가용 최소 구성입니다. 
+4축 평가용 구성은 하기와 같다.
+
+1. 주어진 정보를 취합하여 페르소나 도출.
+2. 멀티턴 대화 유지 능력.
+3. 외국인의 언어 능력에 맞춤형 대화.
+4. 주어진 내용을 기반으로 맞춤형 추천.
+
+- README_4axis.md: 4파일 설명 + 실행 순서 + 환경 요구사항이다.
+- 흐름은 시드(evaluation_4axis_seed.csv) → 러너(run_multiturn_generative.py) → 분류기(analyze_4axis.py) 순서고, 시드 수정할 일 생기면 build_4axis_seed.py 고치면 된다.
+
+위 흐름대로 코드를 실행했을 때 나오는 결과로 4축을 모두 평가할 수 있는지, 만약 잘 못한다면 어떻게 하면 더 평가를 잘 할 수 있을지 구체적으로 설명해줘.
+
+
+
+
+172.20.92.48 서버에 SSH 접속이 안 되고 있습니다.
+현재 `Test-NetConnection 172.20.92.48 -Port 22` 결과가 False로 나오는데,
+서버가 실행 중인지와 SSH(22번 포트)가 열려 있는지 확인 부탁드립니다.
+
+1번
+apt update
+
+2번
+apt install -y openssh-server
+
+3번 
+apt update --fix-missing
+apt install -y apt-utils
+apt install -y openssh-server
+
+
+랜덤 포트 확인
+1..100 | % {
+    $p = 30000 + $_
+    Test-NetConnection 172.20.92.48 -Port $p
+}
+
+
+
+위 파일을 진행시켰더니 "multiturn_4axis_20b_report.md" 파일과 같은결과가 나왔다. 성능을 좋게 할라면 어디를 수정하면 좋을까?

@@ -1,0 +1,36 @@
+나의 실험 로그에서 하기와 같이 뜬다.
+
+[1/20] PER-MT-101 turn1/24 status=REPETITION_LOOP history_tokens=96 reply_tokens=1006 (124663ms, raw 2012 chars / clean 1468 chars)
+[1/20] PER-MT-101 turn2/24 status=NORMAL history_tokens=851 reply_tokens=448 (53443ms, raw 897 chars / clean 284 chars)
+
+위에서 status, history_tokens, reply_tokens, raw, clean이 각각 무엇을 뜻하는지 말해줘.
+
+
+
+
+결과값
+status=repetition_loop : 반복 collapse 발생
+raw chars : 실제 생성 길이
+clean chars: history에 들어간 길이 
+reply_tokens: 현재 assistant 응답 하나가 사용한 토큰 수
+history_tokens: 현재 turn까지 누적된 전체 대화 context 길이
+
+=> raw char 1280, 1584 기준 정상 생성
+=> raw char 1748 기준 에러
+
+
+---------
+
+5/22 회의후
+에러
+
+frn-mt-101 turn 8, 9, 10 error {'error': {'message': "'max_tokens' or 'max_completion_tokens'
+
+
+
+strip_think_for_history()
+<think>...</think> 블록 제거
+keep_after_last_think()
+</think>가 여러 번 있으면 가장 마지막 </think> 뒤의 최종 답변만 남김
+generated_turns.append(... cleaned_reply)
+원본 reply가 아니라 cleaned 답변만 CSV에 저장
